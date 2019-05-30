@@ -1,16 +1,17 @@
 import React from 'react';
 import axios from 'axios';
-import styles from './style.css';
-import sampleData from '../sampleData.js';
+import "./App-style.css";
+// import sampleData from '../../sampleData.js';
 import Photo from './Photo.jsx';
-import ExpandGallery from './ExpandGallery.jsx'
-import NavDots from './NavDots.jsx';
+import ExpandGallery from '../Expand/ExpandGallery.jsx'
+import NavDots from '../NavDots/NavDots.jsx';
+import $ from 'jquery'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      gallery: [],
+      gallery: [0],
       currentIndex: 0, 
       view: 'main',
       currentDot: 0,
@@ -30,15 +31,25 @@ class App extends React.Component {
   }
 
   handleFetchData () {
-    axios.get('http://localhost:3003/api/carouselPhotos')
-    .then(({data}) => {
-      var lastEle = data.data[3]
-      var firstEle = data.data[0]
-      data.data.push(firstEle)
-      data.data.splice(0,0,lastEle)
-      this.setState({
-      gallery: data.data})
-      })
+    // axios.get('http://localhost:3000/api/')
+    // .then(({data}) => {
+    //   var lastEle = data.data[3]
+    //   var firstEle = data.data[0]
+    //   data.data.push(firstEle)
+    //   data.data.splice(0,0,lastEle)
+    //   this.setState({
+    //   gallery: data.data})
+    //   })
+
+      $.get('/api/carouselPhotos/something', (data) => {
+        var lastEle = data.data[3]
+        var firstEle = data.data[0]
+        data.data.push(firstEle)
+        data.data.splice(0,0,lastEle)
+        this.setState({
+          gallery: data.data})
+        })
+    
   }
   
 

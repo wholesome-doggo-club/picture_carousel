@@ -19,16 +19,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        loader: ['style-loader','css-loader']
       }, 
-      {
-        test: /\.css$/,
-        loader: 'css-loader', 
-        options: {
-          modules: true,
-          localIdentName: '[name]_[local]_[hash:base64:5]',
-        } 
-      }
     ]
   },
   resolve: {

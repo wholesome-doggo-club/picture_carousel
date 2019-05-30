@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './style.css'
+import "./App-style.css";
+// import styles from './style.css'
 
 const Photo = props => {
   const { src , id} = props.item;

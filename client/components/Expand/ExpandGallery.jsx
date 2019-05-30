@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpandSingle from './ExpandSingle.jsx';
+import "./Expand-style.css";
 
 class ExpandGallery extends React.Component {
   constructor(props) {

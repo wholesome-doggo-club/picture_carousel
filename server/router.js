@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('./controller.js')
 
 router
-  .route('/carouselPhotos')
+  .route('/something')
   .get(controller.get)
   .post(controller.post)
 

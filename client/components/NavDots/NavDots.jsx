@@ -1,4 +1,5 @@
 import React from 'react';
+import "./NavDots-style.css";
 
 class NavDots extends React.Component {
   constructor(props) {
