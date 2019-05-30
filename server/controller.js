@@ -10,6 +10,10 @@ module.exports = {
   
   },
   get: (req, res) => {
+    // models.find() 
+    // .then(data => res.status(200).send(data))
+    // .catch(err => console.log('Error finding in database',err))
+
     models.countDocuments().exec(function(err, count){
       var random = Math.floor(Math.random() * count);
     
@@ -20,8 +24,5 @@ module.exports = {
     });
 
 
-    // models.find({})
-    // .then(data => res.status(200).send(data))
-    // .catch(err => console.log('Error finding in database',err))
   } 
 }

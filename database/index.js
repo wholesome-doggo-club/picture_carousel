@@ -13,4 +13,4 @@ let carouselDataSchema = new mongoose.Schema({
 
 let PetPictures = mongoose.model('PetPictures', carouselDataSchema);
 
-module.exports = PetPictures; 
+module.exports =  PetPictures;

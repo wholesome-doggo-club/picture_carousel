@@ -6,10 +6,11 @@
   "license": "",
   "engines": {
     "node": ">=6.13.0"
-  },
+  }, 
   "scripts": {
     "start": "nodemon ./server/index.js",
-    "build": "webpack -w"
+    "build": "webpack -w", 
+    "seed-photos": "node ./database/seedPhotos.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
